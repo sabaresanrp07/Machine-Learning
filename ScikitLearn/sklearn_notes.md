@@ -112,6 +112,14 @@ Target is also a column(feature) in datasheet but which machine predicts like ma
 - age , height , marks are features
 
 
+### Training vs prediction vs Testing
+
+- model.fit(X, y) - to  make the model learn (training).
+
+- model.predict(X_new)- the learned model to produce outputs for new input data.
+
+- Testing is like model evaluation and validation 
+
 # Supervised Learning
 
 - Our previous example is supervised learning where we give the algorithm both the input data and the correct answers, and it learns a relationship between them.
@@ -184,7 +192,10 @@ A single sample can belong to multiple classes simultaneously Eg: A movie can be
 
 # Unsupervised Learning
 
-earning patterns from data without target labels.
+learning patterns from data without target labels
+
+model.fit(X) - fit in unsupervised learning no y (target)
+
 
 ## why we need unsupervised learning
 
@@ -233,30 +244,56 @@ Unsupervised Learning
 
 Clustering means Putting similar observations into groups but there are no labels saying customer under this condition this group no , machine finds out using those data.
 
-### K-Means
+### K-mean
 
-This is one of the most important algorithms in scikit-learn.
+- __K-Means = K clusters + mean__ of their points it is an unsupervised learning algorithm that divides data into K groups (clusters) based on similarity.
+
+- Choose K (number of clusters).
+- Pick K centroids (cluster centers).
+- Assign each data point to its nearest centroid.
+- Calculate the mean of points in each cluster → new centroid.
+- Repeat steps 3–4 until the centroids stop changing. 
+
+just for now , these are steps of K-means we see abt this in detailed later
+
+- sklearn code for K-means
+
+1.from sklearn.cluster import KMeans
+2.model = KMeans(n_clusters=2, random_state=42)
+3.model.fit(X)
+4.model.labels_ 
+
+- line 2 is very cretical see we need 2 clusters then we need 2 centroid the values near a centroid form a cluster we know that so initially we need centroids 
+- which will be choosen by the system randomly for that we use "random_state = 42" -> this is a C/Cpp logic that 42 is a seed value this line generate a pseudo random number
+
+- line 4 give something like [1, 1, 1, 0, 0, 0] this means 2 cluster 1&0 like 2 class if u give input it finds the 
+
+we see abt K-Means in deepth later
+
+### PCA(Principal component analysis) — Dimensionality Reduction (this process figure out most important dimension(feature) )
+
+Now imagine your dataset has 100 features
+
+For example:
+X.shape might be (10_000, 100)
+
+- each feature is a dimension if we have 2 dimension easy to visualize but what id we have 100 so we need PCA
+
+Working with 100 dimensions can be difficult to visualize and sometimes unnecessarily expensive.
+
+PCA attempts to represent the data using fewer dimensions while retaining as much variance as possible.
 
 
+- sklearn code 
 
+1.from sklearn.decomposition import PCA
+2.pca = PCA(n_components=2)
+3.X_reduced = pca.fit_transform(X)
 
+Now:
 
+X.shape might be (10000, 2) bcz of line 3 ,Now you can plot those two dimensions. 
 
+#### What exactly is PCA doing?
 
-
-
-
-
-
-
-
-
-### Training vs prediction vs Testing
-
-- model.fit(X, y) - to  make the model learn (training).
-
-- model.predict(X_new)- the learned model to produce outputs for new input data.
-
-- Testing is like model evaluation and validation 
-
-
+ 
