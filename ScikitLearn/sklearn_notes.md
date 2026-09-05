@@ -8,7 +8,7 @@ This notes helps begineers to learn scklearn faster and much more easier,before 
 ## What is Machine Learning?
 ## Dataset, features, labels, samples
 ## Supervised vs unsupervised learning
-## Training vs testing
+## Training vs testing vs prediction
 ## Model, parameters, hyperparameters
 ## Linear Regression
 ## Loss / cost function
@@ -32,7 +32,7 @@ This notes helps begineers to learn scklearn faster and much more easier,before 
 
 # Machine learning
 
--we give data to the machine(computer) like hours studied and marks scored we feed enough data and later we give only hours studied using the pattern computer predict score.
+- we give data to the machine(computer) like hours studied and marks scored we feed enough data and later we give only hours studied using the pattern computer predict score.
 
 # Model
 
@@ -97,6 +97,7 @@ Then you can ask it to predict:
 
 
 ## sample & feautre
+Target is also a column(feature) in datasheet but which machine predicts like mark
 
 - Each row is a sample (or observation).
 - Each col is a feature (basically attributes/matadata of a row like age,height,marks,hours etc)
@@ -111,11 +112,11 @@ Then you can ask it to predict:
 - age , height , marks are features
 
 
-## Supervised Learning
+# Supervised Learning
 
 - Our previous example is supervised learning where we give the algorithm both the input data and the correct answers, and it learns a relationship between them.
 
-#### Lable 
+### Lable 
 
 - A label is basically the known answer associated with a training sample.
 
@@ -123,7 +124,7 @@ Email                    Label
 --------------------------------
 "Win ₹1 crore!"          Spam
 "Meeting at 5 PM"        Not spam
-"Congratulations!"      Spam
+"Congratulations!"       Spam
 
 - this is what happens while supervised learning
 
@@ -141,24 +142,121 @@ Email                    Label
            ↓
        Repeat
 
-#### Training vs prediction
-
-- model.fit(X, y) Use known examples (X, y) to learn the model.
-
-- model.predict(X_new) Use the learned model to produce outputs for new input data.
-
 - 2 types of supervised learning 
 
-### Regression 
+## Regression 
 
-- predict a number Eg:- slary,score etc a numerical value 88,50,000 like this.
- 
-### Classification
+- predict a numerical/continuous value Eg:- slary,score etc a numerical value 88,50,000 like this.
 
-- Predict a category/class Eg:- email → spam / not spam this predict a category 
+Common algorithms:
 
-####
+- Linear Regression
+- Polynomial Regression
+- Decision Tree Regression
+- Random Forest Regression
+- Gradient Boosting Regression
+- Support Vector Regression
+
+## Classification
+
+- Predicts a category/class Eg:- email → spam / not spam this predict a category 
+
+### Binary classification
 
  true/fales , pass/fail , spam/not spam.
+
+### Multiclass classification
+
+more than 2 class Ex: target can be Cat/Dog/Horse/Bird in binary only Dog/Cat
+
+algorithms:
+
+- Logistic Regression
+- Decision Trees
+- Random Forest
+- SVM
+- K-Nearest Neighbors
+- Neural Networks
+
+### Multilabel classification
+
+A single sample can belong to multiple classes simultaneously Eg: A movie can be Action/Comedy/Sci-Fi all three can be true one sample -> multiple classes but in multiclass one sample -> one class
+
+# Unsupervised Learning
+
+earning patterns from data without target labels.
+
+## why we need unsupervised learning
+
+like imagine we have 10,000 customer data
+
+Age    Income    Purchases
+22     25k       2
+24     28k       3
+45     90k       15
+48     100k      18
+...
+
+You don't know what "type" each customer is , so we could ask an unsupervised algorithm __Can you find groups of customers that behave similarly__
+
+so it might discover 
+
+- Cluster 1 → young + low income + few purchases
+- Cluster 2 → middle-aged + high income + many purchases
+- Cluster 3 → young + high income + moderate purchases 
+
+We don't tell the algoritham these groups,it discovered them from the data (no target lable is given )
+
+Unsupervised Learning
+│
+├── Clustering
+│   ├── K-Means
+│   ├── DBSCAN
+│   ├── Agglomerative Clustering
+│   └── Gaussian Mixture
+│
+├── Dimensionality Reduction
+│   ├── PCA
+│   ├── TruncatedSVD
+│   └── t-SNE
+│
+├── Anomaly / Outlier Detection
+│   ├── Isolation Forest
+│   ├── One-Class SVM
+│   └── Local Outlier Factor
+│
+└── Density Estimation
+    └── Kernel Density Estimation
+
+
+## Clustering 
+
+Clustering means Putting similar observations into groups but there are no labels saying customer under this condition this group no , machine finds out using those data.
+
+### K-Means
+
+This is one of the most important algorithms in scikit-learn.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Training vs prediction vs Testing
+
+- model.fit(X, y) - to  make the model learn (training).
+
+- model.predict(X_new)- the learned model to produce outputs for new input data.
+
+- Testing is like model evaluation and validation 
 
 
