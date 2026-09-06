@@ -219,25 +219,25 @@ so it might discover
 We don't tell the algoritham these groups,it discovered them from the data (no target lable is given )
 
 Unsupervised Learning
-│
-├── Clustering
-│   ├── K-Means
-│   ├── DBSCAN
-│   ├── Agglomerative Clustering
-│   └── Gaussian Mixture
-│
-├── Dimensionality Reduction
-│   ├── PCA
-│   ├── TruncatedSVD
-│   └── t-SNE
-│
-├── Anomaly / Outlier Detection
-│   ├── Isolation Forest
-│   ├── One-Class SVM
-│   └── Local Outlier Factor
-│
-└── Density Estimation
-    └── Kernel Density Estimation
+
+- Clustering
+    ├── K-Means
+    ├── DBSCAN
+    ├── Agglomerative Clustering
+    └── Gaussian Mixture
+
+- Dimensionality Reduction
+   ├── PCA
+   ├── TruncatedSVD
+   └── t-SNE
+
+- Anomaly / Outlier Detection
+   ├── Isolation Forest
+   ├── One-Class SVM
+   └── Local Outlier Factor
+
+- Density Estimation
+   └── Kernel Density Estimation
 
 
 ## Clustering 
@@ -270,7 +270,12 @@ just for now , these are steps of K-means we see abt this in detailed later
 
 we see abt K-Means in deepth later
 
-### PCA(Principal component analysis) — Dimensionality Reduction (this process figure out most important dimension(feature) )
+### PCA(Principal component analysis) — Dimensionality Reduction 
+
+- this process figure out most important dimension(feature) that has the most impact on the target variable.
+
+- this solve Dimensionality curse
+
 
 Now imagine your dataset has 100 features
 
@@ -292,8 +297,28 @@ PCA attempts to represent the data using fewer dimensions while retaining as muc
 
 Now:
 
-X.shape might be (10000, 2) bcz of line 3 ,Now you can plot those two dimensions. 
+X.shape might be (10000, 2) bcz of line 3 ,Now you can plot those two dimensions also we can plot in 3d by (10000,3). 
 
 #### What exactly is PCA doing?
+ 
+- find out most important feature that has most impacat on target
+
+- next PC1 & PC2 , PC1 - most variance and PC2 - second most variance
+
+- new features are now PC1,PC2
+
+##### there are lot we see these things later
+
+# Linear regression
+
+- y = mx + c
+
+- in our
 
  
+
+
+
+
+
+
