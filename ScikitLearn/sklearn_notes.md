@@ -221,23 +221,23 @@ We don't tell the algoritham these groups,it discovered them from the data (no t
 Unsupervised Learning
 
 - Clustering
-    ├── K-Means
-    ├── DBSCAN
-    ├── Agglomerative Clustering
-    └── Gaussian Mixture
+    - K-Means
+    - DBSCAN
+    - Agglomerative Clustering
+    - Gaussian Mixture
 
 - Dimensionality Reduction
-   ├── PCA
-   ├── TruncatedSVD
-   └── t-SNE
+   - PCA
+   - TruncatedSVD
+   - t-SNE
 
 - Anomaly / Outlier Detection
-   ├── Isolation Forest
-   ├── One-Class SVM
-   └── Local Outlier Factor
+   - Isolation Forest
+   - One-Class SVM
+   - Local Outlier Factor
 
 - Density Estimation
-   └── Kernel Density Estimation
+   - Kernel Density Estimation
 
 
 ## Clustering 
